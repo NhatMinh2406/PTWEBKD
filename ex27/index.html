@@ -1,0 +1,55 @@
+<html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tiêu đề trang</title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+            .header {
+                height: 20%;
+            }
+            .header img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+            .layout {
+                display: flex;
+                height: 80%;
+            }
+            .menu {
+                width: 30%;
+                border-right: 1px solid #ccc;
+                overflow: hidden;
+            }
+            .content {
+                width: 70%;
+                overflow: hidden;
+            }
+            .menu iframe,
+            .content iframe {
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <img src="images/Logo.jpg" alt="Logo">
+        </div>
+        <div class="layout">
+            <div class="menu">
+                <iframe src="ex.html" name="menu_frame" title="Menu"></iframe>
+            </div>
+            <div class="content">
+                <iframe src="TCE.html" name="main_content" title="Nội dung chính"></iframe>
+            </div>
+        </div>
+    </body>
+</html>
