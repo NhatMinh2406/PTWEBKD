@@ -1,0 +1,14 @@
+thead, tfoot{
+    background-color: rgb(216, 244, 251);
+    color: brown;
+}
+tbody{
+    background-color: whitesmoke;
+}
+tbody tr:nth-child(2n){
+    background-color: pink;
+}
+tbody tr:hover{
+    background-color: rgb(232, 232, 154);
+    cursor: pointer;
+}
