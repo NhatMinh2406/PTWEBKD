@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background: #2be6f3;
+                font-family: Arial, sans-serif;
+
+            }
+            .container {
+                max-width: 760px;
+                margin: 20px auto;
+                background: #9feefb;
+                border: 3px solid rgb(8, 8, 149);
+                box-shadow: 15px 0 30px rgba(0, 0, 0, 0.2);
+                padding: 15px;
+            }
+            .header {
+                text-align: left;
+                margin-bottom: 2px;
+                color: red;
+                text-transform: uppercase;
+                border-bottom: 2px solid #055245;
+                font-weight: bold;
+            }
+            fieldset {
+                border: none;
+                padding: 0;
+                margin: 0;
+            }
+            .results {
+                margin-top: 20px;
+                padding: 15px;
+                background: #ffffff;
+                border: 1px solid #0b5f5d;
+                color: #083d55;
+            }
+        </style>
+    </head>
+    <body class="container">
+        <div class="header">
+           Online Classifieds Search Form 
+        </div>
+        <form action="search_result.html" method="get">
+            <h3>
+                1. Search for a classified in the following sections:
+            </h3>
+            <table border="0" >
+                <tr>
+                    <td>
+                        <fieldset>
+                            <label>
+                                <input type="radio" name="section" value="Employment"> Employment 
+                            </label>
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset>
+                            <label>
+                                <input type="radio" name="section" value="Personal"> Personal
+                            </label>
+                        </fieldset>
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <fieldset>
+                            <label>
+                                <input type="radio" name="section" value="For Sale"> For Sale 
+                            </label>
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset>
+                            <label>
+                                <input type="radio" name="section" value="Miscellaneous"> Miscellaneous
+                            </label>
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <fieldset>
+                            <label>
+                                <input type="radio" name="section" value="Housing"> Housing
+                            </label>
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset>
+                            <label>
+                                <input type="radio" name="section" value="All of the above"> All of the above
+                            </label>
+                    </td>
+                </tr>
+            </table>
+            <h3>
+                2. Search for the following publications:
+            </h3>
+            <table border="0">
+                <tr>
+                    <td>
+                        <fieldset>
+                            <label>
+                                <input type="checkbox" name="publication" value="Midwest times"> Midwest times
+                            </label>
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset>
+                            <label>
+                                <input type="checkbox" name="publication" value="Mordern News"> Mordern News
+                            </label>
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset>
+                            <label>
+                                <input type="checkbox" name="publication" value="Employment Today"> Employment Today
+                            </label>
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <fieldset>
+                            <label>
+                                <input type="checkbox" name="publication" value="Great Lakes Classified"> Great Lakes Classified
+                            </label>
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset>
+                            <label>
+                                <input type="checkbox" name="publication" value="Middleton Daily"> Middleton Daily
+                            </label>
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset>
+                            <label>
+                                <input type="checkbox" name="publication" value="Cashtown Daily News"> Cashtown Daily News
+                            </label>
+                        </fieldset>
+                    </td>
+                </tr>
+            </table>
+            
+            <label for="dateFrom"> <b>3. From </b></label>
+            <input type="date" id="dateFrom" name="dateFrom">      
+            <label for="dateTo"><b>To </b></label>
+            <input type="date" id="dateTo" name="dateTo">
+            <h3>
+                4. Enter a few keywords to describe  the classified.
+            </h3>
+            <input type="text" name="keywords" id="keywords" size="80">
+            <h3>
+                5. Click one of the options below:
+            </h3>
+            <button type="submit">
+                <div> 
+                    <img src="images/Search.gif">
+                </div>
+            </button>
+            <button type="button" onclick="window.location.href='help.html'">
+                <div>
+                    <img src="images/Help.gif">
+                </div>  
+            </button>
+            <button type="reset">
+                <div>
+                    <img src="images/Cancel.gif">
+                </div>
+            </button>
+        </form>
+    </body>
+</html>
