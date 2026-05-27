@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background: #034448;
+                font-family: Arial, sans-serif;
+                color:#ffffff
+            }
+            .container {
+                max-width: 760px;
+                margin: 20px auto;
+                background: #03343b;
+                border: 3px solid rgb(248, 248, 255);
+                box-shadow: 15px 0 30px rgba(0, 0, 0, 0.2);
+                padding: 15px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 2px;
+                font-weight: bold;
+                color: white;
+            }
+            .label {
+                width: 18%;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+            fieldset {
+                border: none;
+                padding: 0;
+                margin: 0;
+            }
+            .results {
+                margin-top: 20px;
+                padding: 15px;
+                background: #ffffff;
+                border: 1px solid #0b5f5d;
+                color: #083d55;
+            }
+        </style>
+    </head>
+    <body class="container">
+        <form>
+            <div style="text-align: center;">
+                <img src="images/Logo.gif">
+            </div>
+            <h2 class="header"> Newborn Registration </h2>
+            <table>
+                <tr>
+                    <td class="label"> Date:</td>
+                    <td><input type="date" name="registrationDate"></td>
+                </tr>
+                <tr>
+                    <td class="label"> 1. Infant's First Name:</td>
+                    <td><input type="text" name="firstName"></td>
+                    <td class="label"> Last:</td>
+                    <td><input type="text" name="lastName"></td>
+                </tr>
+                <tr>
+                    <td class="label"> 2. Medical Record Number:</td>
+                    <td><input type="text" name="medicalRecordNumber"></td>
+                </tr>
+                <tr>
+                    <td class="label"> 3. Date of Birth:</td>
+                    <td><input type="date" name="dateOfBirth"></td>
+                </tr>
+                <tr>
+                    <td class="label"> 4. Birth Weight:</td>
+                    <td><input type="text" name="birthWeight"></td>
+                </tr>
+                <tr>
+                    <td class="label"> 5. APGAR Score:</td>
+                    <td><input type="text" name="apgarScore"></td>
+                </tr>
+                <tr>
+                    <td class="label"> 6. Mother's First Name:</td>
+                    <td><input type="text" name="motherFirstName"></td>
+                    <td class="label"> Last:</td>
+                    <td><input type="text" name="motherLastName"></td>
+                </tr>
+                <tr>
+                    <td class="label"> 7. Father's First Name:</td>
+                    <td><input type="text" name="fatherFirstName"></td>
+                    <td class="label"> Last:</td>
+                    <td><input type="text" name="fatherLastName"></td>
+                </tr>
+                <tr>
+                    <td class="label"> 8. Physician (check all that apply):</td>
+                    <td colspan="3">
+                        <form name="Physician" id="Physician">
+                            <select name="physician" id="physician" size="5" onchange="Physician.Output.value=this.value; Physician.Output=this.value;">
+                                <option value="Dr. Warren Albert">Dr. Warren Albert</option>
+                                <option value="Dr. Maria Alvarez">Dr. Maria Alvarez</option>
+                                <option value="Dr. Karen Brinkman">Dr. Karen Brinkman</option>
+                                <option value="Dr. Micheal Kerry">Dr. Micheal Kerry</option>
+                            </select>
+                        </form>
+                    </td>                  
+                </tr>
+                <tr>
+                    <td button type="Submit" colspan="2" style="text-align: right;">
+                        <button type="submit">Register</button>
+                    </td>
+                    <td button type="Reset" colspan="2" style="text-align: left;">
+                        <button type="reset">Cancel</button>
+
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
