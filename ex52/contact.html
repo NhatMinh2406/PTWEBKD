@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title> Tiêu đề trang</title>
+        <style>
+            body {
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #f4f5fb;
+            }
+            .contact-box {
+                width: 500px;
+                margin: 20px auto;
+                font-size: 30px;
+                padding: 20px;
+                border: 1px solid rgb(212, 212, 236);
+                background: #ffffff;
+            }
+            input[type="text"], textarea {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contact-box"> 
+        
+            <form
+                action="process_contact.html"
+                method="get"
+                name="contactForm">
+                <table border="0" width="400px" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style=" font-size: 20px;">
+                            Full Name:
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="fullname" id="fullname"> </br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style=" font-size: 20px;">
+                            Email:
+                        </td>
+                        <td>
+                            Send to
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="email" id="email">
+                        </td>
+                        <td rowspan="3">
+                            <form name="Sendto" id="Sendto">
+                                <select name="Sendto" id="Sendto" size="5" onchange="Sendto.Output.value=this.value; Sendto.Output=this.value;">
+                                    <option value="Editorial board">Editorial board</option>
+                                    <option value="News Department">News Department</option>
+                                    <option value="Board of Perspectives">Board of Perspectives</option>
+                                    <option value="Business Department">Business Department</option>
+                                </select>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style=" font-size: 20px; ">
+                            Title:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="title" id="title">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style=" font-size: 20px; ">
+                            Content:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <input type="submit" value="Send" style="background-color: rgb(82, 20, 20); color:#f4f5fb; font-weight: bold;">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>      
+    </body>
+</html>
