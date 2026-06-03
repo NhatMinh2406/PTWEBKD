@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    
+    <form name="quadform">
+        <table>
+            <tr>
+                <th colspan="2">The quadratic equation</th>
+            </tr>
+            <tr>
+                <td>a:</td>
+                <td><input type="text" name="ip_a" id="ip_a" value="1"></td>
+            </tr>
+            <tr>
+                <td>b:</td>
+                <td><input type="text" name="ip_b" id="ip_b" value="3"></td>
+            </tr>
+            <tr>
+                <td>c:</td>
+                <td><input type="text" name="ip_c" id="ip_c" value="-4"></td>
+            </tr>
+            <tr>
+                <td>Result:</td>
+                <td id="resultDisplay">x1=-4 ; x2=1</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="button" onclick="solveQuadratic()" value="Find solution">
+                    <input type="button" onclick="clearForm()" value="Clear">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script type="text/javascript">
+        // Hàm giải phương trình bậc 2: ax² + bx + c = 0
+        function solveQuadratic() {
+            var a = eval(document.quadform.ip_a.value);
+            var b = eval(document.quadform.ip_b.value);
+            var c = eval(document.quadform.ip_c.value);
+            
+            var result = "";
+            
+            // Kiểm tra a = 0 (không phải phương trình bậc 2)
+            if (a == 0) {
+                // Trở thành phương trình bậc 1: bx + c = 0
+                if (b == 0) {
+                    if (c == 0) {
+                        result = "Infinite solutions (Vô số nghiệm)";
+                    } else {
+                        result = "No solution (Vô nghiệm)";
+                    }
+                } else {
+                    result = "x = " + (-c / b);
+                }
+            } else {
+                // Tính delta
+                var delta = b * b - 4 * a * c;
+                
+                if (delta < 0) {
+                    result = "No solution (Vô nghiệm - Delta < 0)";
+                } else if (delta == 0) {
+                    var x = -b / (2 * a);
+                    result = "x = " + x + " (nghiệm kép)";
+                } else {
+                    var sqrtDelta = Math.sqrt(delta);
+                    var x1 = (-b + sqrtDelta) / (2 * a);
+                    var x2 = (-b - sqrtDelta) / (2 * a);
+                    
+                    // Sắp xếp x1, x2 theo thứ tự giảm dần
+                    if (x1 < x2) {
+                        var temp = x1;
+                        x1 = x2;
+                        x2 = temp;
+                    }
+                    
+                    result = "x1=" + x1 + " ; x2=" + x2;
+                }
+            }
+            
+            document.getElementById("resultDisplay").innerHTML = result;
+        }
+        
+        // Hàm xóa form
+        function clearForm() {
+            document.quadform.ip_a.value = "";
+            document.quadform.ip_b.value = "";
+            document.quadform.ip_c.value = "";
+            document.getElementById("resultDisplay").innerHTML = "";
+        }
+    </script>
+</body>
+</html>

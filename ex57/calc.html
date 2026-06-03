@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 57: Handle the text change event</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            border: 3px solid #000;
+            padding: 10px;
+            background-color: #e0e0e0;
+        }
+        .requirement {
+            margin: 20px 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        table {
+            border-collapse: collapse;
+            border: 2px solid #000;
+            margin: 20px auto;
+            width: 900px;
+            background-color: white;
+        }
+        th {
+            background-color: #e8e8e8;
+            border: 2px solid #000;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        td {
+            border: 1px solid #999;
+            padding: 10px;
+            text-align: center;
+            font-size: 13px;
+        }
+        input[type="text"] {
+            padding: 6px;
+            width: 150px;
+            font-size: 12px;
+            border: 1px solid #999;
+            border-radius: 3px;
+        }
+        input[type="button"] {
+            padding: 10px 40px;
+            background-color: #ffd700;
+            color: black;
+            border: 2px solid #ff8c00;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        input[type="button"]:hover {
+            background-color: #ffed4e;
+        }
+        .total-row {
+            background-color: #f0f0f0;
+        }
+        #totalInput {
+            width: 200px;
+            font-size: 13px;
+            background-color: #e6f2ff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Exercise 57: Handle the text change event</h2>
+    
+    <div class="requirement">
+        <strong>Requirement:</strong><br>
+        Create a website with Tables and controls as described below:
+        <ul>
+            <li>The user enters the quantity in the Textboxes the quantity in each line → The box into money will automatically calculate (Price * quantity). Data validity check required</li>
+            <li>Click on "Sum" → display the total amount in the Total box</li>
+        </ul>
+    </div>
+    
+    <form name="orderform">
+        <table>
+            <tr>
+                <th>Part Number</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Item table</th>
+            </tr>
+            <tr>
+                <td>C112</td>
+                <td>Mouse</td>
+                <td>19.95</td>
+                <td><input type="text" name="qty1" id="qty1" onchange="calcItem(1)"></td>
+                <td><input type="text" name="item1" id="item1" readonly></td>
+            </tr>
+            <tr>
+                <td>B124</td>
+                <td>Keyboard US</td>
+                <td>29.95</td>
+                <td><input type="text" name="qty2" id="qty2" onchange="calcItem(2)"></td>
+                <td><input type="text" name="item2" id="item2" readonly></td>
+            </tr>
+            <tr>
+                <td>U125</td>
+                <td>USB KingMax</td>
+                <td>39.95</td>
+                <td><input type="text" name="qty3" id="qty3" onchange="calcItem(3)"></td>
+                <td><input type="text" name="item3" id="item3" readonly></td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="4" style="text-align: right; font-weight: bold;">Total:</td>
+                <td><input type="text" id="totalInput" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="5" style="text-align: right; padding-right: 30px;">
+                    <input type="button" onclick="calcTotal()" value="Sum">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script type="text/javascript">
+        // Dữ liệu sản phẩm
+        var prices = [19.95, 29.95, 39.95];
+        
+        // Tính tiền cho từng item
+        function calcItem(itemNum) {
+            var qtyId = "qty" + itemNum;
+            var itemId = "item" + itemNum;
+            var qtyValue = document.getElementById(qtyId).value;
+            
+            // Kiểm tra tính hợp lệ
+            if (qtyValue === "") {
+                document.getElementById(itemId).value = "";
+                return;
+            }
+            
+            // Kiểm tra có phải số không
+            if (isNaN(qtyValue)) {
+                alert("Quantity must be a number!");
+                document.getElementById(qtyId).value = "";
+                document.getElementById(itemId).value = "";
+                return;
+            }
+            
+            var qty = parseFloat(qtyValue);
+            
+            // Kiểm tra số >= 0
+            if (qty < 0) {
+                alert("Quantity must be greater than or equal to 0!");
+                document.getElementById(qtyId).value = "";
+                document.getElementById(itemId).value = "";
+                return;
+            }
+            
+            // Tính tiền: Price * Qty
+            var itemTotal = prices[itemNum - 1] * qty;
+            document.getElementById(itemId).value = itemTotal.toFixed(2);
+        }
+        
+        // Tính tổng cộng
+        function calcTotal() {
+            var total = 0;
+            var hasError = false;
+            
+            for (var i = 1; i <= 3; i++) {
+                var itemValue = document.getElementById("item" + i).value;
+                if (itemValue !== "") {
+                    var itemTotal = parseFloat(itemValue);
+                    if (!isNaN(itemTotal)) {
+                        total += itemTotal;
+                    }
+                }
+            }
+            
+            document.getElementById("totalInput").value = total.toFixed(2);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h2>Math Functions</h2>
+    
+    <form name="mathform">
+        <table>
+            <tr>
+                <td>a:</td>
+                <td><input type="text" name="ip_a" id="ip_a" ></td>
+            </tr>
+            <tr>
+                <td>b:</td>
+                <td><input type="text" name="ip_b" id="ip_b" ></td>
+            </tr>
+            <tr>
+                <td>c:</td>
+                <td><input type="text" name="ip_c" id="ip_c" ></td>
+            </tr>
+            <tr>
+                <td>Result:</td>
+                <td id="resultDisplay"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" onclick="calcMax()" value="MAX">
+                    <input type="button" onclick="calcMin()" value="MIN">
+                    <input type="button" onclick="calcSin()" value="sin(a)">
+                    <input type="button" onclick="calcCos()" value="Cos(a)">
+                    <input type="button" onclick="calcPower()" value="a^b">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script type="text/javascript">
+        // Tính MAX(a, b, c)
+        function calcMax() {
+            var a = parseFloat(document.mathform.ip_a.value);
+            var b = parseFloat(document.mathform.ip_b.value);
+            var c = parseFloat(document.mathform.ip_c.value);
+            var result = Math.max(a, b, c);
+            document.getElementById("resultDisplay").innerHTML = result;
+        }
+
+        // Tính MIN(a, b, c)
+        function calcMin() {
+            var a = parseFloat(document.mathform.ip_a.value);
+            var b = parseFloat(document.mathform.ip_b.value);
+            var c = parseFloat(document.mathform.ip_c.value);
+            var result = Math.min(a, b, c);
+            document.getElementById("resultDisplay").innerHTML = result;
+        }
+
+        // Tính sin(a) - chuyển độ sang radian
+        function calcSin() {
+            var a = parseFloat(document.mathform.ip_a.value);
+            var radians = a * Math.PI / 180;
+            var result = Math.sin(radians);
+            document.getElementById("resultDisplay").innerHTML = result;
+        }
+
+        // Tính cos(a) - chuyển độ sang radian
+        function calcCos() {
+            var a = parseFloat(document.mathform.ip_a.value);
+            var radians = a * Math.PI / 180;
+            var result = Math.cos(radians);
+            document.getElementById("resultDisplay").innerHTML = result;
+        }
+
+        // Tính a^b
+        function calcPower() {
+            var a = parseFloat(document.mathform.ip_a.value);
+            var b = parseFloat(document.mathform.ip_b.value);
+            var result = Math.pow(a, b);
+            document.getElementById("resultDisplay").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
