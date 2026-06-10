@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 63: Member Registration</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Member Registration</h2>
+        <form id="regForm">
+            <table class="form-table">
+                <tr>
+                    <td><label for="txtName">Name(*)</label></td>
+                    <td><input type="text" id="txtName" required></td>
+                </tr>
+                <tr>
+                    <td>Birthday(*)</td>
+                    <td>
+                        Day: <select id="selDay"></select>
+                        Month: <select id="selMonth"></select>
+                        Year: <select id="selYear"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender(*)</td>
+                    <td>
+                        <input type="radio" name="gender" id="radMan" value="Man" checked> <label for="radMan">Man</label>
+                        <input type="radio" name="gender" id="radWoman" value="Woman"> <label for="radWoman">Woman</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="txtEmail">Email(*)</label></td>
+                    <td><input type="text" id="txtEmail" required></td>
+                </tr>
+                <tr>
+                    <td>Your favorite:</td>
+                    <td>
+                        <input type="checkbox" name="favorite" value="Shopping" id="chkShop"> <label for="chkShop">Shopping</label><br>
+                        <input type="checkbox" name="favorite" value="Tourism" id="chkTour"> <label for="chkTour">Tourism</label><br>
+                        <input type="checkbox" name="favorite" value="Chat" id="chkChat"> <label for="chkChat">Chat</label><br>
+                        <input type="checkbox" name="favorite" value="Read a book" id="chkRead"> <label for="chkRead">Read a book</label><br>
+                        <input type="checkbox" name="favorite" value="Listening to music" id="chkMusic"> <label for="chkMusic">Listening to music</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Your favorite color:</td>
+                    <td>
+                        <input type="radio" name="favColor" value="Blue" id="colBlue" checked> <label for="colBlue" class="bg-blue">Blue</label><br>
+                        <input type="radio" name="favColor" value="Red" id="colRed"> <label for="colRed" class="bg-red">Red</label><br>
+                        <input type="radio" name="favColor" value="Yellow" id="colYellow"> <label for="colYellow" class="bg-yellow">Yellow</label><br>
+                        <input type="radio" name="favColor" value="Green" id="colGreen"> <label for="colGreen" class="bg-green">Green</label><br>
+                        <input type="radio" name="favColor" value="Violet" id="colViolet"> <label for="colViolet" class="bg-violet">Violet</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="button" id="btnSignUp">Sign up</button> 
+                        <button type="button" id="btnReset">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <table class="result-table" id="memberTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Birthday</th>
+                <th>Hobbies</th>
+                <th>Colors</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>john@gmail.com</td>
+                <td>Man</td>
+                <td>02/02/1990</td>
+                <td>Reading</td>
+                <td>Yellow</td>
+            </tr>
+            <tr>
+                <td>Peter</td>
+                <td>peter@gmail.com</td>
+                <td>Man</td>
+                <td>01/01/1992</td>
+                <td>chat, reading</td>
+                <td>Red</td>
+            </tr>
+            <tr>
+                <td>Lucy</td>
+                <td>lucy@gmail.com</td>
+                <td>Woman</td>
+                <td>01/02/2005</td>
+                <td>Listening, Chat</td>
+                <td>Violet</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="main.js"></script>
+</body>
+</html>

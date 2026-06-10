@@ -1,0 +1,45 @@
+<html>
+<head>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <button type="button" id="btnAdd">Add Node</button>
+                <div class="inputs">
+                    <label>Content <input type="text" id="txtAddContent"></label>
+                    <label>Position <input type="number" id="txtAddPos" min="1" placeholder="1, 2..."></label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <button type="button" id="btnRemove">Remove Node</button>
+                <div class="inputs">
+                    <label>Position <input type="number" id="txtRemovePos" min="1"></label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <button type="button" id="btnModify">Modify Node</button>
+                <div class="inputs">
+                    <label>New Content <input type="text" id="txtModContent"></label>
+                    <label>Position <input type="number" id="txtModPos" min="1"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="display-area">
+            <h3>Web Node</h3>
+            <ul id="webNodeList">
+                <li>Data base</li>
+                <li>Web1</li>
+                <li>Web2</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
