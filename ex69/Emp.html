@@ -1,0 +1,26 @@
+
+<html >
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="loadData()">
+
+    <table class="filter-box">
+        <tr>
+            <th>Title:</th>
+            <td><select id="titleSelect" onchange="renderTable()"></select></td>
+        </tr>
+    </table>
+    <br>
+    <table class="data-table">
+        <tr class="header">
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Phone</th>
+        </tr>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script src="js/emp.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+table {
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: left;
+}
+
+.filter-box {
+    width: 250px;
+}
+
+.data-table {
+    width: 400px;
+}
+
+.header {
+    background-color: #548235;
+    color: white;
+}
+
+select {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
