@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AHiHi Company - Midterm</title>
+    <style>
+        body { margin: 0; display: flex; flex-direction: column; min-height: 100vh; font-family: Arial, sans-serif; }
+        .main-container { display: flex; flex-direction: column; flex: 1; }
+        /* Phần A: Menu */
+        #part-A { width: 100%; background-color: #f0f8ff; padding: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+        #part-A .menu-wrap { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
+        #part-A button { background-color: #1f78b4; color: white; border: none; border-radius: 6px; padding: 10px 14px; cursor: pointer; transition: transform .1s ease, background-color .2s ease; }
+        #part-A button:hover { background-color: #155a81; transform: translateY(-1px); }
+        #part-A button:focus { outline: 2px solid #0a3f61; }
+        /* Phần B: Nội dung hiển thị */
+        #part-B { flex: 1; padding: 20px; overflow-y: auto; background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%); }
+        #part-B h2 { margin-top: 0; }
+        /* Phần C: Marquee ngày giờ */
+        #part-C { height: 34px; background-color: #1f78b4; color: white; text-align: center; line-height: 34px; font-weight: bold; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- PART A: MENU (Q1) -->
+        <div id="part-A">
+            <div class="menu-wrap">
+                <button onclick="showSection('about-me')">About me</button>
+                <button onclick="showWeather()">Tuoitre Weather API</button>
+                <button onclick="showRSS()">Vnexpress RSS</button>
+                <button onclick="showProducts()">Products</button>
+                <button onclick="showSection('my-cart')">My Cart</button>
+                <button onclick="showSection('login')">Login/Logout</button>
+                <button onclick="showMyInfo()">My Infor</button>
+                <button onclick="showAdmin()">Administrator</button>
+            </div>
+        </div>
+
+        <!-- PART B: NỘI DUNG (Q2) -->
+        <div id="part-B">
+            <!-- Section About Me -->
+            <div id="about-me">
+                <h2>About Me</h2>
+                <p>ID: K244111469</p>
+                <p>Name: Tran Thi Nhat Minh</p>
+                <p>Class: BW06</p>
+                <img src="images/ảnh thẻ.jpg" alt="Avatar" width="150">
+            </div>
+            <!-- Các section khác sẽ được ẩn mặc định -->
+            <div id="products" class="hidden"></div>
+            <div id="my-cart" class="hidden"><h2>My Cart</h2><div id="cart-content"></div></div>
+            <div id="login" class="hidden">
+                <h2>Login</h2>
+                <label>Username</label><br>
+                <input id="username" type="text"><br><br>
+                <label>Password</label><br>
+                <input id="password" type="password"><br><br>
+                <button onclick="doLogin()">Login</button>
+            </div>
+            <div id="my-info" class="hidden">...</div>
+            <div id="admin" class="hidden">...</div>
+            <div id="external-api" class="hidden"></div>
+        </div>
+    </div>
+
+    <!-- PART C: NGÀY GIỜ CHẠY TRÊN MÀN HÌNH (Q2) -->
+    <div id="part-C">
+        <marquee behavior="alternate" id="datetime-display"></marquee>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="override.js"></script>
+</body>
+</html>
